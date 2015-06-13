@@ -15,7 +15,7 @@
 from io       import StringIO
 from unittest import main, TestCase
 
-from CollatzSimple import collatz_read, collatz_eval, collatz_print, collatz_solve, cycle_length
+from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve, cycle_length
 
 # -----------
 # TestCollatz
