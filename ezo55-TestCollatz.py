@@ -15,13 +15,14 @@
 from io       import StringIO
 from unittest import main, TestCase
 
-from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve, collatz_cycle_length
+from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve, collatz_cycle_length, collatz_check_order, collatz_check_range
 
 # -----------
 # TestCollatz
 # -----------
 
 class TestCollatz (TestCase) :
+
     # ----
     # read
     # ----
@@ -69,6 +70,44 @@ class TestCollatz (TestCase) :
     def test_eval_4 (self) :
         v = collatz_eval(900, 1000)
         self.assertEqual(v, 174)
+
+    # ----
+    # check_order
+    # ----
+
+    def test_check_order_1 (self) :
+        a = [0,10]        
+        collatz_check_order(a)
+        self.assertEqual(a,[0,10])
+
+    def test_check_order_2 (self) :
+        a = [10,0]        
+        collatz_check_order(a)
+        self.assertEqual(a,[0,10])
+
+    def test_check_order_3 (self) :
+        a = [10,0]        
+        collatz_check_order(a)
+        self.assertEqual(a.index(10),1)
+
+    # ----
+    # check_range
+    # ----
+
+    def test_check_range_1 (self) :
+        a = [0,10]        
+        collatz_check_range(a)
+        self.assertEqual(a,[6,10])
+
+    def test_check_range_2 (self) :
+        a = [10,99]        
+        collatz_check_range(a)
+        self.assertEqual(a,[50,99])
+
+    def test_check_range_3 (self) :
+        a = [51,99]
+        collatz_check_range(a)
+        self.assertEqual(a,[51,99])
 
     # ----
     # cycle_length
