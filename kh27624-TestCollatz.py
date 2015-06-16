@@ -122,14 +122,6 @@ class TestCollatz (TestCase) :
         collatz_solve(r, w)
         self.assertEqual(w.getvalue(), "1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
 
-    # NEED TO ASK ABOUT
-    # Test Case: No Input
-    def test_solve (self) :
-        r = StringIO("")
-        w = StringIO()
-        collatz_solve(r, w)
-        self.assertEqual(w.getvalue(), "")
-
     def test_solve (self) :
         r = StringIO("1 999999\n")
         w = StringIO()
@@ -165,5 +157,4 @@ TestCollatz      33      1      2      1    94%   79
 ---------------------------------------------------------
 TOTAL            51      1      8      1    97%
 """
-
 
